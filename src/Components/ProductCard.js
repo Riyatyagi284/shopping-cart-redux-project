@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { toast } from "react-hot-toast";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -7,24 +7,7 @@ import { addToWishlist, removeFromWishlist } from "../redux/Slices/wishlistSlice
 
 const ProductCard = ({ post }) => {
   const { cart } = useSelector((state) => state);
-  const wishlist = useSelector((state) => state.wishlist);
   const dispatch = useDispatch();
-
-  // const isItemInWishlist = wishlist.includes(post.id);
-  // const [isWishlistActive,setIsWishlistActive] = useState(false);
-
-  // const handleWishlistToggle = () =>{
-  //   if (isItemInWishlist) {
-  //     dispatch(removeFromWishlist(post.id));
-  //     toast.error("Item removed from Wishlist");
-  //   }
-  //   else{
-  //     dispatch(addToWishlist(post.id));
-  //     toast.success("Item added to Wishlist");
-  //   }
-  //   setIsWishlistActive(!isWishlistActive);
-  // };
-
 
   // ###########cart function###################
   const addToCart = () => {
@@ -74,24 +57,8 @@ const ProductCard = ({ post }) => {
           </p>
         </div>
 
-        {/* Wishist button */}
 
-        {/* <button onClick={handleWishlistToggle}>
-          {
-            isWishlistActive ? "Remove From Wishlist" : "Add to Wishlist"
-          }
-        </button>
-        */}
-
-
-        {/* <div>
-          {
-            isWishlistActive ? (<button onClick={handleAddToWishlist}>Add to wishlist</button>):
-            ( <button  onClick={handleRemoveFromWishlist}>Remove from wishlist</button>)
-          }
-        </div> */}
-
-        {cart.some((p) => p.id == post.id) ? (
+        {cart.some((p) => p.id === post.id) ? (
           <button
             className="text-gray-700 border-2 border-gray-700 rounded-full font-semibold text-[12px] p-1 
           uppercase hover:bg-gray-700 hover:text-white transition duration-300 ease-in tracking-wide"

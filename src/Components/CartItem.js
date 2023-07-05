@@ -17,7 +17,7 @@ const CartItem = ({ item, itemIndex }) => {
 
     return (
         <div className='block mb-28 ml-6 border-0 md:flex flex-row justify-between items-center pb-4 md:mb-6 md:border-b-4 w-[400px] h-[180px] gap-4 ' >
-            <img src={item.image} alt="product-item-image" className='w-[30%] h-auto ' />
+            <img src={item.image} alt="product" className='w-[30%] h-auto ' />
             <div className='block md:flex md:flex-wrap gap-3'>
                 <h1 className='font-bold text-md '>{item.title}</h1>
                 {item.description && (
