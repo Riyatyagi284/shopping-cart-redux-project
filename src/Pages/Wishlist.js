@@ -42,8 +42,8 @@ const WishlistPage = () => {
               <tr>
                 <th className="text-xl py-4  ">Action</th>
                 <th className="text-xl py-4 ">Product Image</th>
-                <th className="text-xl py-4 hidden xxl:block">Product Name</th>
-                <th className="text-xl py-4 hidden lg:block ">Unit Price</th>
+                <th className="text-xl py-4 hidden xxl:block xxl:px-0 xxl:ml-[118px] xxl:relative">Product Name</th>
+                <th className="text-xl py-4 hidden lg:block xl:ml-[11rem] lg:ml-0 xxl:ml-[-2rem] xxl:mt-[-53px] ">Unit Price</th>
                 <th className="text-xl py-4  ">Add to Cart</th>
               </tr>
             </thead>
@@ -53,8 +53,8 @@ const WishlistPage = () => {
                 <tr className="text-center" key={product.id}>
                   <td><RiDeleteBin6Fill className="cursor-pointer text-xl sm:mx-auto mx-[20px] mr-0 text-center" onClick={() => handleRemoveFromWishlist(product.id)} /></td>
                   <td className="sm:w-[100px] w-[80px] mx-0 mr-0"><img src={product.image} className="w-[80px] block sm:mx-auto mx-0 mr-0" alt="product" /></td>
-                  <td className="hidden xxl:block mx-auto"><div className="">{product.title}</div></td>
-                  <td className="hidden lg:block "><div className="font-bold text-center pt-[40px]">${product.price}</div></td>
+                  <td className="hidden xxl:block xxl:pl-[100px] xxl:my-auto xxl:text-center xxl:absolute xxl-top-8 xxl:l-[39rem]"><div className="xxl:ml-[3rem]">{product.title}</div></td>
+                  <td className="hidden lg:block xxl:w-[7rem] xxl:h-[7rem] xxl:mt-[-2rem] xxl:my-auto xxl:text-center"><div className="font-bold text-center pt-[40px]">${product.price}</div></td>
                   <td><button onClick={() => addToCart(product)} className="sm:mx-auto mx-0  flex p-3 items-center gap-x-1 tab:gap-2 rounded-sm bg-green-800 text-white font-bold text-center cursor-pointer">
                     <p className="text-sm">Add to cart</p>
                     <AiOutlineShoppingCart className="text-lg" />
